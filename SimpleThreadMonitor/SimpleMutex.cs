@@ -12,7 +12,10 @@ namespace SimpleThreadMonitor
                 try
                 {
                     Monitor.Enter(Object);
-                    Process();
+                    {
+                        Process();
+                    }
+                    Monitor.Exit(Object);
                 }
                 catch (Exception Exception)
                 {
@@ -23,13 +26,6 @@ namespace SimpleThreadMonitor
 
                     try { ExceptionCallback?.Invoke(Exception); }
                     catch { }
-                }
-                finally
-                {
-                    if (!ReleaseLockBeforeExceptionCallback)
-                    {
-                        Monitor.Exit(Object);
-                    }
                 }
             }
         }
