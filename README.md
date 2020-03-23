@@ -32,7 +32,8 @@ public static class Mutex
           Monitor.Exit(Object);
         }
 
-        ExceptionCallback?.Invoke(Exception);
+        try { ExceptionCallback?.Invoke(Exception); }
+        catch { }
       }
       finally
       {
