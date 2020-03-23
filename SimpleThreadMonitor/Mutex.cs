@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace ThreadMonitor
+namespace SimpleThreadMonitor
 {
     public static class Mutex
     {
