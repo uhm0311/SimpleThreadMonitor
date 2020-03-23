@@ -21,7 +21,8 @@ namespace SimpleThreadMonitor
                         Monitor.Exit(Object);
                     }
 
-                    ExceptionCallback?.Invoke(Exception);
+                    try { ExceptionCallback?.Invoke(Exception); }
+                    catch { }
                 }
                 finally
                 {
