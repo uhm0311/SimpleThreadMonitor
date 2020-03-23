@@ -26,6 +26,11 @@ namespace SimpleThreadMonitor
 
                     try { ExceptionCallback?.Invoke(Exception); }
                     catch { }
+
+                    if (!ReleaseLockBeforeExceptionCallback)
+                    {
+                        Monitor.Exit(Object);
+                    }
                 }
             }
         }
