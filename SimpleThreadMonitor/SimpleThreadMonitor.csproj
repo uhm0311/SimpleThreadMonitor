@@ -19,7 +19,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/uhm0311/SimpleThreadMonitor.git</RepositoryUrl>
   <MinClientVersion>2.12</MinClientVersion>
-  <PackageVersion>1.0.1</PackageVersion>
-  <PackageReleaseNotes>Change class name to avoid duplicate with System.Threading.Mutex class.</PackageReleaseNotes>
+  <PackageVersion>1.0.2</PackageVersion>
+  <PackageReleaseNotes>Fix bug that lock does not release.</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
