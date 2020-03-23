@@ -37,6 +37,11 @@ public static class SimpleMutex
 
         try { ExceptionCallback?.Invoke(Exception); }
         catch { }
+        
+        if (!ReleaseLockBeforeExceptionCallback)
+        {
+          Monitor.Exit(Object);
+        }
       }
     }
   }
