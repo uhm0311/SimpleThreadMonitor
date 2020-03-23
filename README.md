@@ -23,7 +23,10 @@ public static class SimpleMutex
       try
       {
         Monitor.Enter(Object);
-        Process();
+        {
+          Process();
+        }
+        Monitor.Exit(Object);
       }
       catch (Exception Exception)
       {
@@ -34,13 +37,6 @@ public static class SimpleMutex
 
         try { ExceptionCallback?.Invoke(Exception); }
         catch { }
-      }
-      finally
-      {
-        if (!ReleaseLockBeforeExceptionCallback)
-        {
-          Monitor.Exit(Object);
-        }
       }
     }
   }
