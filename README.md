@@ -6,7 +6,7 @@ using SimpleThreadMonitor;
 
 object lock = new object();
 
-Mutex.Lock(lock, () => 
+SimpleMutex.Lock(lock, () => 
 {
   // Do something
 });
@@ -14,7 +14,7 @@ Mutex.Lock(lock, () =>
 
 # Implementaion
 ```csharp
-public static class Mutex
+public static class SimpleMutex
 {
   public static void Lock(object Object, Action Process, Action<Exception> ExceptionCallback = null, bool ReleaseLockBeforeExceptionCallback = false)
   {
