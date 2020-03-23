@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace SimpleThreadMonitor
 {
-    public static class Mutex
+    public static class SimpleMutex
     {
         public static void Lock(object Object, Action Process, Action<Exception> ExceptionCallback = null, bool ReleaseLockBeforeExceptionCallback = false)
         {
